@@ -1,0 +1,60 @@
+
+#Gal{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+h2{
+    z-index: 0;
+}
+
+#zdjęcia_silnikow_gal{
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: block;
+    float: left;
+    z-index: 8;
+}
+.Zdjecie_silnika_img{
+    max-width: 550px;
+    max-height: 308px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+#zdjęcia_log_ga{
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding-bottom: 33%;
+    display: block;
+    float: left;
+    z-index: 8;
+}
+.Logo_silnika_img{
+    max-width: 550px;
+    max-height: 308px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    padding-bottom: 5%;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+img:hover{
+    opacity: 0.6;
+}

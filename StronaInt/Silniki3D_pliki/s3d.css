@@ -1,0 +1,43 @@
+
+#S3D{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.Silnik{
+    position: static;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding-bottom: 33%;
+    font-size: 25px;
+    z-index: 9;
+}
+.Zdjecie_silnika_img{
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    float: left;
+}
+.Logo_silnika_img{
+    max-width: 550px;
+    max-height: 308px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+.Zdjęcia_silnika{
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    float: left;
+}
