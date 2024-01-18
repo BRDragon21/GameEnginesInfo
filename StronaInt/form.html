@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html lang = "pl">
+<html lang="pl">
 
 <head>
-	<meta charset = "utf-8"/>
-	
-	<meta name = "keywords" content = "strona, witryna, www, zbiór, silniki, do, gier"/>
-	<meta name = "author" content = "Dawid Pawłowski"/>
+    <meta charset="utf-8" />
+
+    <meta name="keywords" content="strona, witryna, www, zbiór, silniki, do, gier" />
+    <meta name="author" content="Dawid Pawłowski" />
 
     <link rel="stylesheet" type="text/css" href="css.css" />
+    
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Przechwyć formularz
+            const form = document.querySelector('form');
+
+            // Dodaj nasłuchiwanie zdarzenia submit formularza
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault(); // Zapobiegaj domyślnej akcji formularza
+
+                // Pobierz dane z formularza
+                const tytul = form.querySelector('input[name="tytul"]').value;
+                const email = form.querySelector('input[name="email"]').value;
+                const zawartosc = form.querySelector('textarea[name="zawartosc"]').value;
+
+                // Wyślij dane za pomocą fetch do funkcji Azure
+                const response = await fetch('https://formkontakt.azurewebsites.net/api/FormSubKontakt?clientId=default', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // Ustaw typ zawartości na JSON
+                    },
+                    body: JSON.stringify({ tytul, email, zawartosc }), // Przekształć dane na JSON i wyślij
+                });
+
+                // Obsłuż odpowiedź
+                if (response.ok) {
+                    console.log('Dane zostały pomyślnie przetworzone i zapisane w bazie danych.');
+                } else {
+                    console.error('Błąd podczas przetwarzania danych:', response.statusText);
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
-  <form action="https://formkontakt.azurewebsites.net/api/FormSubKontakt?clientId=default" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="https://formkontakt.azurewebsites.net/api/FormSubKontakt?clientId=default" method="POST" enctype="application/x-www-form-urlencoded">
         <input type="text" name="tytul"></br>
-	<input type=email placeholder=text@mail.com name="email"></br>
-        <textarea rows=10 cols=70 placeholder="Dokładnie opisz swoje zgłoszenie." name="zawartosc"></textarea></br>
-        <input type=submit value="Wyślij"> <input type=reset>
- </form>
+        <input type="email" placeholder="text@mail.com" name="email"></br>
+        <textarea rows="10" cols="70" placeholder="Dokładnie opisz swoje zgłoszenie." name="zawartosc"></textarea></br>
+        <input type="submit" value="Wyślij"> <input type="reset">
+    </form>
 </body>
+
 </html>
+
