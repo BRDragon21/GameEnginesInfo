@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "pl">
+
+<head>
+	<meta charset = "utf-8"/>
+	
+	<meta name = "keywords" content = "strona, witryna, www, zbiór, silniki, do, gier"/>
+	<meta name = "author" content = "Dawid Pawłowski"/>
+
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" type="text/css" href="Kontakt_pliki/kon.css" />
+</head>
+
+<body>
+  <form action="https://formkontakt.azurewebsites.net/api/FormSubKontakt?clientId=default" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <label>Tytuł zgłoszemia: <input id="tytul" type="text" name="tytul"></label></br>
+            <label>E-mail: <input id="email" type=email placeholder=text@mail.com name="email"></label></br>
+            <label for="zawartosc">Zawatrość zgłoszenia: </br>
+            <textarea id="zawartosc" rows=10 cols=70 placeholder="Dokładnie opisz swoje zgłoszenie." name="zawartosc"></textarea></label></br>
+            <label><input type=submit value="Wyślij"> <input type=reset></label>
+       </form>
+</body>
+</html>
