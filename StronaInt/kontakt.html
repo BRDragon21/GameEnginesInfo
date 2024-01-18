@@ -39,6 +39,21 @@
        </form>
     </div>
 
+	<script>
+        function validateForm() {
+            var tytul = document.getElementById("tytul").value;
+            var email = document.getElementById("email").value;
+            var zawartosc = document.getElementById("zawartosc").value;
+
+            if (tytul === "" || email === "" || zawartosc === "") {
+                alert("Wszystkie pola formularza muszą być uzupełnione.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
 	<div id="stopka">
         <p id="Copyright">
            &copy 2022/24 wszystkie prawa zastrzeżone Dawid Pawłowski. 
